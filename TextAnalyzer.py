@@ -317,11 +317,11 @@ def main():
 
     # Un-comment the lines below when you want to test the extra credit
     # or uncomment the class TestSimilarity above
-    #ta1 = TextAnalyzer("files_for_testing/tinyfile_1.txt")
-    #ta2 = TextAnalyzer("files_for_testing/tinyfile_1.txt") 
+    #ta1 = TextAnalyzer("tinyfile_1.txt")
+    #ta2 = TextAnalyzer("tinyfile_1.txt") 
     #print(ta1.similarity_with(ta2, 3))
-    #ta1 = TextAnalyzer("files_for_testing/tinyfile_1.txt")
-    #ta2 = TextAnalyzer("files_for_testing/tinyfile_2.txt") 
+    #ta1 = TextAnalyzer("tinyfile_1.txt")
+    #ta2 = TextAnalyzer("tinyfile_2.txt") 
     #print(ta1.similarity_with(ta2, 3))
 
 if __name__ == "__main__":
