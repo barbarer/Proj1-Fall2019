@@ -74,17 +74,17 @@ class TextAnalyzer:
 class TestLineCount(unittest.TestCase):
 
     def test_line_count_tiny1(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_1.txt")
+        ta = TextAnalyzer("tinyfile_1.txt")
         self.assertEqual(ta.line_count(), 1)
         self.assertEqual(ta.line_count(), 1) # Check that it works when called a second time
         
     def test_line_count_tiny3(self):    
-        ta = TextAnalyzer("files_for_testing/tinyfile_4.txt")
+        ta = TextAnalyzer("tinyfile_4.txt")
         self.assertEqual(ta.line_count(), 3)
         self.assertEqual(ta.line_count(), 3) # Check that it works when called a second time
 
     def test_line_count_the_victors(self):    
-        ta = TextAnalyzer("files_for_testing/the_victors.txt")
+        ta = TextAnalyzer("the_victors.txt")
         self.assertEqual(ta.line_count(), 33)
         self.assertEqual(ta.line_count(), 33) # Check that it works when called a second time
 
@@ -92,30 +92,30 @@ class TestLineCount(unittest.TestCase):
 class TestWordCount(unittest.TestCase):
     
     def test_word_count_tiny1(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_1.txt")
+        ta = TextAnalyzer("tinyfile_1.txt")
         self.assertEqual(ta.word_count(), 3)
         self.assertEqual(ta.word_count(), 3) # Check that it works when called a second time
         
     def test_word_count_tiny3(self):    
-        ta = TextAnalyzer("files_for_testing/tinyfile_3.txt")
+        ta = TextAnalyzer("tinyfile_3.txt")
         self.assertEqual(ta.word_count(), 8)
         self.assertEqual(ta.word_count(), 8) # Check that it works when called a second time
 
     def test_word_count_the_victors(self):    
-        ta = TextAnalyzer("files_for_testing/the_victors.txt")
+        ta = TextAnalyzer("the_victors.txt")
         self.assertEqual(ta.word_count(), 175)
         self.assertEqual(ta.word_count(), 175) # Check that it works when called a second time
 
 class TestFrequencies(unittest.TestCase):
 
     def test_frequencies_tiny1(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_1.txt")
+        ta = TextAnalyzer("tinyfile_1.txt")
         self.assertEqual(ta.frequencies()['i'], 1)
         self.assertEqual(ta.frequencies()['love'], 1)
         self.assertEqual(ta.frequencies()['cats'], 1)
 
     def test_frequencies_tiny3(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_3.txt")
+        ta = TextAnalyzer("tinyfile_3.txt")
         self.assertEqual(ta.frequencies()['i'], 1)
         self.assertEqual(ta.frequencies()['love'], 1)
         self.assertEqual(ta.frequencies()['cats'], 1)
@@ -123,7 +123,7 @@ class TestFrequencies(unittest.TestCase):
         self.assertEqual(ta.frequencies()['much'], 1)
 
     def test_frequencies_tiny4(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_4.txt")
+        ta = TextAnalyzer("tinyfile_4.txt")
         self.assertEqual(ta.frequencies()['i'], 3)
         self.assertEqual(ta.frequencies()['love'], 3)
         self.assertEqual(ta.frequencies()['cats'], 1)
@@ -135,7 +135,7 @@ class TestFrequencies(unittest.TestCase):
 class TestFrequencyOf(unittest.TestCase):
 
     def test_frequency_of_tiny1(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_1.txt")
+        ta = TextAnalyzer("tinyfile_1.txt")
         self.assertEqual(ta.frequency_of('i'), 1)
         self.assertEqual(ta.frequency_of('love'), 1)
         self.assertEqual(ta.frequency_of('cats'), 1)
@@ -144,7 +144,7 @@ class TestFrequencyOf(unittest.TestCase):
         self.assertEqual(ta.frequency_of('LOVE'), 1)
 
     def test_frequency_of_tiny3(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_3.txt")
+        ta = TextAnalyzer("tinyfile_3.txt")
         self.assertEqual(ta.frequency_of('i'), 1)
         self.assertEqual(ta.frequency_of('love'), 1)
         self.assertEqual(ta.frequency_of('cats'), 1)
@@ -153,7 +153,7 @@ class TestFrequencyOf(unittest.TestCase):
         self.assertEqual(ta.frequency_of('dogs'), 0)
 
     def test_frequency_of_tiny4(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_4.txt")
+        ta = TextAnalyzer("tinyfile_4.txt")
         self.assertEqual(ta.frequency_of('i'), 3)
         self.assertEqual(ta.frequency_of('love'), 3)
         self.assertEqual(ta.frequency_of('cats'), 1)
@@ -166,39 +166,39 @@ class TestFrequencyOf(unittest.TestCase):
 class TestVocabulary(unittest.TestCase):
 
     def test_vocabulary_tiny1(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_1.txt")
+        ta = TextAnalyzer("tinyfile_1.txt")
         self.assertEqual(ta.vocabulary(), ['cats', 'i', 'love'])
 
     def test_vocabulary_tiny3(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_3.txt")
+        ta = TextAnalyzer("tinyfile_3.txt")
         self.assertEqual(ta.vocabulary(), ['cats', 'i', 'love', 'much', 'so'])
 
     def test_vocabulary_tiny4(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_4.txt")
+        ta = TextAnalyzer("tinyfile_4.txt")
         self.assertEqual(ta.vocabulary(), ['cats', 'dogs', 'i', 'love', 'much', 'parakeets', 'so'])
 
 class TestNumUniqueWords(unittest.TestCase):
 
     def test_num_unique_words_tiny1(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_1.txt")
+        ta = TextAnalyzer("tinyfile_1.txt")
         self.assertEqual(ta.num_unique_words(), 3)
 
     def test_num_unique_words_tiny3(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_3.txt")
+        ta = TextAnalyzer("tinyfile_3.txt")
         self.assertEqual(ta.num_unique_words(), 5)
 
     def test_num_unique_words_tiny4(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_4.txt")
+        ta = TextAnalyzer("tinyfile_4.txt")
         self.assertEqual(ta.num_unique_words(), 7)
 
     def test_num_unique_words_thevictors(self):
-        ta = TextAnalyzer("files_for_testing/the_victors.txt")
+        ta = TextAnalyzer("the_victors.txt")
         self.assertEqual(ta.num_unique_words(), 56)
 
 class TestPercentFrequencyOf(unittest.TestCase):
 
     def test_percent_frequency_of_tiny1(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_1.txt")
+        ta = TextAnalyzer("tinyfile_1.txt")
         self.assertIn('i', ta.percent_frequencies())
         self.assertIn('love', ta.percent_frequencies())
         self.assertIn('cats', ta.percent_frequencies())
@@ -207,7 +207,7 @@ class TestPercentFrequencyOf(unittest.TestCase):
         self.assertAlmostEqual(ta.percent_frequencies()['cats'], 1/3)
 
     def test_percent_frequency_of_tiny3(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_3.txt")
+        ta = TextAnalyzer("tinyfile_3.txt")
         self.assertIn('i', ta.percent_frequencies())
         self.assertIn('love', ta.percent_frequencies())
         self.assertIn('cats', ta.percent_frequencies())
@@ -220,7 +220,7 @@ class TestPercentFrequencyOf(unittest.TestCase):
         self.assertAlmostEqual(ta.percent_frequencies()['much'], 1/8)
 
     def test_percent_frequency_of_tiny4(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_4.txt")
+        ta = TextAnalyzer("tinyfile_4.txt")
         self.assertAlmostEqual(ta.percent_frequencies()['i'], 3/24)
         self.assertAlmostEqual(ta.percent_frequencies()['love'], 3/24)
         self.assertAlmostEqual(ta.percent_frequencies()['cats'], 1/24)
@@ -232,39 +232,39 @@ class TestPercentFrequencyOf(unittest.TestCase):
 class TestMostCommon1(unittest.TestCase):
 
     def test_most_common_1_tiny3(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_3.txt")
+        ta = TextAnalyzer("tinyfile_3.txt")
         self.assertEqual(ta.most_common(), ['so'])
 
     def test_most_common_1_tiny4(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_4.txt")
+        ta = TextAnalyzer("tinyfile_4.txt")
         self.assertEqual(ta.most_common(), ['so'])
 
 class TestMostCommonOutOfRange(unittest.TestCase):
 
     def test_most_common_oor_multiple_tiny1(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_1.txt")
+        ta = TextAnalyzer("tinyfile_1.txt")
         self.assertEqual(ta.most_common(0), [])
         self.assertEqual(ta.most_common(4), ['cats', 'i', 'love'])
 
 class TestMostCommonMultipleClearCases(unittest.TestCase):
 
     def test_most_common_multiple_tiny1(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_1.txt")
+        ta = TextAnalyzer("tinyfile_1.txt")
         self.assertEqual(ta.most_common(3), ['cats', 'i', 'love'])
 
     def test_most_common_multiple_tiny4(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_4.txt")
+        ta = TextAnalyzer("tinyfile_4.txt")
         self.assertEqual(ta.most_common(4), ['i', 'love', 'much', 'so'])
 
 class TestMostCommonMultiple(unittest.TestCase):
 
     def test_most_common_multiple_inbetween_tiny1(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_1.txt")
+        ta = TextAnalyzer("tinyfile_1.txt")
         self.assertEqual(ta.most_common(1), ['cats'])
         self.assertEqual(ta.most_common(2), ['cats', 'i'])
 
     def test_most_common_multiple_inbetween_tiny3(self):
-        ta = TextAnalyzer("files_for_testing/tinyfile_3.txt")
+        ta = TextAnalyzer("tinyfile_3.txt")
         self.assertEqual(ta.most_common(2), ['cats', 'so'])
         self.assertEqual(ta.most_common(3), ['cats', 'i', 'so'])
         self.assertEqual(ta.most_common(4), ['cats', 'i', 'love', 'so'])
@@ -273,24 +273,24 @@ class TestMostCommonMultiple(unittest.TestCase):
 '''
 class TestSimilarity(unittest.TestCase):
     def test_similarity_when_all_same(self):
-        ta1 = TextAnalyzer("files_for_testing/tinyfile_1.txt")
-        ta2 = TextAnalyzer("files_for_testing/tinyfile_1.txt") 
+        ta1 = TextAnalyzer("tinyfile_1.txt")
+        ta2 = TextAnalyzer("tinyfile_1.txt") 
         self.assertAlmostEqual(ta1.similarity_with(ta2, 1), 1.0)
         self.assertAlmostEqual(ta1.similarity_with(ta2, 2), 1.0)
         self.assertAlmostEqual(ta1.similarity_with(ta2, 3), 1.0)
         self.assertAlmostEqual(ta1.similarity_with(ta2), 1.0)
 
     def test_similarity_when_all_different(self):
-        ta1 = TextAnalyzer("files_for_testing/tinyfile_1.txt")
-        ta2 = TextAnalyzer("files_for_testing/tinyfile_2.txt") 
+        ta1 = TextAnalyzer("tinyfile_1.txt")
+        ta2 = TextAnalyzer("tinyfile_2.txt") 
         self.assertAlmostEqual(ta1.similarity_with(ta2, 1), 0.0)
         self.assertAlmostEqual(ta1.similarity_with(ta2, 2), 0.0)
         self.assertAlmostEqual(ta1.similarity_with(ta2, 3), 0.0)
         self.assertAlmostEqual(ta1.similarity_with(ta2), 0.0)
 
     def test_similarity_when_somewhat_different(self):
-        ta1 = TextAnalyzer("files_for_testing/tinyfile_1.txt")
-        ta2 = TextAnalyzer("files_for_testing/tinyfile_3.txt") 
+        ta1 = TextAnalyzer("tinyfile_1.txt")
+        ta2 = TextAnalyzer("tinyfile_3.txt") 
         self.assertAlmostEqual(ta1.similarity_with(ta2, 1), 0.0)
         self.assertAlmostEqual(ta1.similarity_with(ta2, 2), 0.171498585)
         self.assertAlmostEqual(ta1.similarity_with(ta2, 3), 0.272165527)
@@ -303,7 +303,7 @@ def main():
     # You can uncomment out some of these lines to do some simple tests
     # with print statements before you are ready to run all the unit tests 
     # Or, use your own print statements here as well!
-    fightsong = TextAnalyzer("files_for_testing/fightsong.txt")
+    fightsong = TextAnalyzer("fightsong.txt")
     print("Line count is ", fightsong.line_count())
     #print("Word count is ", fightsong.word_count())
     #print("Vocabulary is ", fightsong.vocabulary())
